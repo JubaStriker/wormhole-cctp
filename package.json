@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "transfer": "node --loader ts-node/esm src/manual-transfer.ts"
+    "transfer": "cross-env NODE_OPTIONS=--experimental-specifier-resolution=node node --loader ts-node/esm src/manual-transfer.ts"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.14.1",
+    "cross-env": "^7.0.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
