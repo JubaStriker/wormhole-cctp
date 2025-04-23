@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "transfer": "cross-env NODE_OPTIONS=--experimental-specifier-resolution=node node --loader ts-node/esm src/manual-transfer.ts"
+    "transfer": "cross-env NODE_OPTIONS=--experimental-specifier-resolution=node node --loader ts-node/esm src/manual-transfer.ts",
+    "wrap": "cross-env NODE_OPTIONS=--experimental-specifier-resolution=node node --loader ts-node/esm src/scripts/create-wrapped.ts"
   },
   "keywords": [],
   "author": "",
