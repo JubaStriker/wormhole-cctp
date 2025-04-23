@@ -5,18 +5,18 @@ import { getSigner } from './helpers/helpers';
 
 
 (async function () {
-    const wh = await wormhole('Testnet', [evm, solana]);
+    const wh = await wormhole('Mainnet', [evm, solana]);
 
     // Set up source and destination chains
-    const sendChain = wh.getChain('Avalanche');
-    const rcvChain = wh.getChain('Sepolia');
+    const sendChain = wh.getChain('Ethereum');
+    const rcvChain = wh.getChain('Solana');
 
     // Configure the signers
     const source = await getSigner(sendChain);
     const destination = await getSigner(rcvChain);
 
     // Define the transfer amount (in the smallest unit, so 0.1 USDC = 100,000 units assuming 6 decimals)
-    const amt = 100_000n;
+    const amt = 1_00_000n;  // 1 USDC
 
     const automatic = false;
 
@@ -29,6 +29,8 @@ import { getSigner } from './helpers/helpers';
     );
 
     console.log('Circle Transfer object created:', xfer);
+
+    console.log('Transfer', xfer.transfer.from.address);
 
     // Initiate the transfer on the source chain (Avalanche)
     console.log('Starting Transfer');
