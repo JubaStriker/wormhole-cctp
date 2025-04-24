@@ -1,0 +1,296 @@
+Circle Transfer object created: CircleTransfer {
+  wh: Wormhole {
+    _network: 'Mainnet',
+    _platforms: Map(2) { 'Evm' => [EvmPlatform], 'Solana' => [SolanaPlatform] },
+    _chains: Map(2) { 'Ethereum' => [EvmChain], 'Solana' => [SolanaChain] },
+    config: {
+      api: 'https://api.wormholescan.io',
+      circleAPI: 'https://iris-api.circle.com/v1/attestations',
+      chains: [Object]
+    }
+  },
+  fromChain: EvmChain {
+    network: 'Mainnet',
+    chain: 'Ethereum',
+    config: {
+      key: 'Ethereum',
+      platform: 'Evm',
+      network: 'Mainnet',
+      chainId: 2,
+      finalityThreshold: 72,
+      blockTime: 15000,
+      contracts: [Object],
+      nativeTokenDecimals: 18,
+      nativeChainId: 1n,
+      tokenMap: [Object],
+      wrappedNative: [Object],
+      explorer: [Object],
+      rpc: 'https://ethereum-rpc.publicnode.com'
+    },
+    platform: EvmPlatform {
+      network: 'Mainnet',
+      config: [Object],
+      _providers: [Object]
+    },
+    rpc: JsonRpcProvider {},
+    protocols: Map(0) {},
+    supportsWormholeCore: [Function: supportsWormholeCore],
+    getWormholeCore: [Function: getWormholeCore],
+    supportsTokenBridge: [Function: supportsTokenBridge],
+    getTokenBridge: [Function: getTokenBridge],
+    supportsAutomaticTokenBridge: [Function: supportsAutomaticTokenBridge],
+    getAutomaticTokenBridge: [Function: getAutomaticTokenBridge],
+    supportsCircleBridge: [Function: supportsCircleBridge],
+    getCircleBridge: [Function: getCircleBridge],
+    supportsAutomaticCircleBridge: [Function: supportsAutomaticCircleBridge],
+    getAutomaticCircleBridge: [Function: getAutomaticCircleBridge],
+    supportsIbcBridge: [Function: supportsIbcBridge],
+    getIbcBridge: [Function: getIbcBridge],
+    supportsPorticoBridge: [Function: supportsPorticoBridge],
+    getPorticoBridge: [Function: getPorticoBridge],
+    supportsTBTCBridge: [Function: supportsTBTCBridge],
+    getTBTCBridge: [Function: getTBTCBridge]
+  },
+  toChain: SolanaChain {
+    network: 'Mainnet',
+    chain: 'Solana',
+    config: {
+      key: 'Solana',
+      platform: 'Solana',
+      network: 'Mainnet',
+      chainId: 1,
+      finalityThreshold: 32,
+      blockTime: 400,
+      contracts: [Object],
+      nativeTokenDecimals: 9,
+      nativeChainId: '5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d',
+      tokenMap: [Object],
+      wrappedNative: [Object],
+      explorer: [Object],
+      rpc: 'https://api.mainnet-beta.solana.com'
+    },
+    platform: SolanaPlatform { network: 'Mainnet', config: [Object] },
+    rpc: Connection {
+      _commitment: 'confirmed',
+      _confirmTransactionInitialTimeout: undefined,
+      _rpcEndpoint: 'https://api.mainnet-beta.solana.com',
+      _rpcWsEndpoint: 'wss://api.mainnet-beta.solana.com',
+      _rpcClient: [ClientBrowser],
+      _rpcRequest: [Function (anonymous)],
+      _rpcBatchRequest: [Function (anonymous)],
+      _rpcWebSocket: [RpcWebSocketClient],
+      _rpcWebSocketConnected: false,
+      _rpcWebSocketHeartbeat: null,
+      _rpcWebSocketIdleTimeout: null,
+      _rpcWebSocketGeneration: 0,
+      _disableBlockhashCaching: false,
+      _pollingBlockhash: false,
+      _blockhashInfo: [Object],
+      _nextClientSubscriptionId: 0,
+      _subscriptionDisposeFunctionsByClientSubscriptionId: {},
+      _subscriptionHashByClientSubscriptionId: {},
+      _subscriptionStateChangeCallbacksByHash: {},
+      _subscriptionCallbacksByServerSubscriptionId: {},
+      _subscriptionsByHash: {},
+      _subscriptionsAutoDisposedByRpc: Set(0) {},
+      getBlockHeight: [AsyncFunction (anonymous)]
+    },
+    protocols: Map(0) {},
+    supportsWormholeCore: [Function: supportsWormholeCore],
+    getWormholeCore: [Function: getWormholeCore],
+    supportsTokenBridge: [Function: supportsTokenBridge],
+    getTokenBridge: [Function: getTokenBridge],
+    supportsAutomaticTokenBridge: [Function: supportsAutomaticTokenBridge],
+    getAutomaticTokenBridge: [Function: getAutomaticTokenBridge],
+    supportsCircleBridge: [Function: supportsCircleBridge],
+    getCircleBridge: [Function: getCircleBridge],
+    supportsAutomaticCircleBridge: [Function: supportsAutomaticCircleBridge],
+    getAutomaticCircleBridge: [Function: getAutomaticCircleBridge],
+    supportsIbcBridge: [Function: supportsIbcBridge],
+    getIbcBridge: [Function: getIbcBridge],
+    supportsPorticoBridge: [Function: supportsPorticoBridge],
+    getPorticoBridge: [Function: getPorticoBridge],
+    supportsTBTCBridge: [Function: supportsTBTCBridge],
+    getTBTCBridge: [Function: getTBTCBridge]
+  },
+  _state: 0,
+  transfer: {
+    amount: 200000n,
+    from: { chain: 'Ethereum', address: [EvmAddress] },
+    to: { chain: 'Solana', address: [SolanaAddress] },
+    automatic: false,
+    payload: undefined,
+    nativeGas: undefined
+  },
+  txids: [],
+  attestations: undefined
+}
+Transfer EvmAddress {
+  type: 'Native',
+  address: '0xaf79714B95F2ca93436f658a88E4139b12461be3'
+}
+Started Transfer:  [
+  '0xef4f880ab808690c56c27083e6bd85e63aad6c82a39a6079a8fcd1f0029b6ddb'
+]
+{
+    Got Attestation:  [
+    {
+      hash: '0x3b2af87f0ad34fa0c7b960bb541bb98034ac03a308838358f40e9ff1954cb530'
+    }
+  ]
+  Completing Transfer
+  Completed Transfer:  [
+    'HUJnm9MugrS1KHjUrNCtz3knNhzgiYTtxqYhvixBfocxgyuB1t6XrMmBjtWdREiu4QA848bEveiDqpzmr52Qwv6'
+  ]
+  Circle Transfer status:  CircleTransfer {
+    wh: Wormhole {
+      _network: 'Mainnet',
+      _platforms: Map(2) { 'Evm' => [EvmPlatform], 'Solana' => [SolanaPlatform] },
+      _chains: Map(2) { 'Ethereum' => [EvmChain], 'Solana' => [SolanaChain] },
+      config: {
+        api: 'https://api.wormholescan.io',
+        circleAPI: 'https://iris-api.circle.com/v1/attestations',
+        chains: [Object]
+      }
+    },
+    fromChain: EvmChain {
+      network: 'Mainnet',
+      chain: 'Ethereum',
+      config: {
+        key: 'Ethereum',
+        platform: 'Evm',
+        network: 'Mainnet',
+        chainId: 2,
+        finalityThreshold: 72,
+        blockTime: 15000,
+        contracts: [Object],
+        nativeTokenDecimals: 18,
+        nativeChainId: 1n,
+        tokenMap: [Object],
+        wrappedNative: [Object],
+        explorer: [Object],
+        rpc: 'https://ethereum-rpc.publicnode.com'
+      },
+      platform: EvmPlatform {
+        network: 'Mainnet',
+        config: [Object],
+        _providers: [Object]
+      },
+      rpc: JsonRpcProvider {},
+      protocols: Map(1) { 'CircleBridge' => [EvmCircleBridge] },
+      supportsWormholeCore: [Function: supportsWormholeCore],
+      getWormholeCore: [Function: getWormholeCore],
+      supportsTokenBridge: [Function: supportsTokenBridge],
+      getTokenBridge: [Function: getTokenBridge],
+      supportsAutomaticTokenBridge: [Function: supportsAutomaticTokenBridge],
+      getAutomaticTokenBridge: [Function: getAutomaticTokenBridge],
+      supportsCircleBridge: [Function: supportsCircleBridge],
+      getCircleBridge: [Function: getCircleBridge],
+      supportsAutomaticCircleBridge: [Function: supportsAutomaticCircleBridge],
+      getAutomaticCircleBridge: [Function: getAutomaticCircleBridge],
+      supportsIbcBridge: [Function: supportsIbcBridge],
+      getIbcBridge: [Function: getIbcBridge],
+      supportsPorticoBridge: [Function: supportsPorticoBridge],
+      getPorticoBridge: [Function: getPorticoBridge],
+      supportsTBTCBridge: [Function: supportsTBTCBridge],
+      getTBTCBridge: [Function: getTBTCBridge]
+    },
+    toChain: SolanaChain {
+      network: 'Mainnet',
+      chain: 'Solana',
+      config: {
+        key: 'Solana',
+        platform: 'Solana',
+        network: 'Mainnet',
+        chainId: 1,
+        finalityThreshold: 32,
+        blockTime: 400,
+        contracts: [Object],
+        nativeTokenDecimals: 9,
+        nativeChainId: '5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d',
+        tokenMap: [Object],
+        wrappedNative: [Object],
+        explorer: [Object],
+        rpc: 'https://api.mainnet-beta.solana.com'
+      },
+      platform: SolanaPlatform { network: 'Mainnet', config: [Object] },
+      rpc: Connection {
+        _commitment: 'confirmed',
+        _confirmTransactionInitialTimeout: undefined,
+        _rpcEndpoint: 'https://api.mainnet-beta.solana.com',
+        _rpcWsEndpoint: 'wss://api.mainnet-beta.solana.com',
+        _rpcClient: [ClientBrowser],
+        _rpcRequest: [Function (anonymous)],
+        _rpcBatchRequest: [Function (anonymous)],
+        _rpcWebSocket: [RpcWebSocketClient],
+        _rpcWebSocketConnected: true,
+        _rpcWebSocketHeartbeat: Timeout {
+          _idleTimeout: 5000,
+          _idlePrev: [TimersList],
+          _idleNext: [Timeout],
+          _idleStart: 1211850,
+          _onTimeout: [Function (anonymous)],
+          _timerArgs: undefined,
+          _repeat: 5000,
+          _destroyed: false,
+          [Symbol(refed)]: true,
+          [Symbol(kHasPrimitive)]: false,
+          [Symbol(asyncId)]: 17661,
+          [Symbol(triggerId)]: 17620,
+          [Symbol(kAsyncContextFrame)]: undefined
+        },
+        _rpcWebSocketIdleTimeout: null,
+        _rpcWebSocketGeneration: 0,
+        _disableBlockhashCaching: false,
+        _pollingBlockhash: false,
+        _blockhashInfo: [Object],
+        _nextClientSubscriptionId: 2,
+        _subscriptionDisposeFunctionsByClientSubscriptionId: {},
+        _subscriptionHashByClientSubscriptionId: {},
+        _subscriptionStateChangeCallbacksByHash: {},
+        _subscriptionCallbacksByServerSubscriptionId: [Object],
+        _subscriptionsByHash: [Object],
+        _subscriptionsAutoDisposedByRpc: [Set],
+        getBlockHeight: [AsyncFunction (anonymous)]
+      },
+      protocols: Map(1) { 'CircleBridge' => [SolanaCircleBridge] },
+      supportsWormholeCore: [Function: supportsWormholeCore],
+      getWormholeCore: [Function: getWormholeCore],
+      supportsTokenBridge: [Function: supportsTokenBridge],
+      getTokenBridge: [Function: getTokenBridge],
+      supportsAutomaticTokenBridge: [Function: supportsAutomaticTokenBridge],
+      getAutomaticTokenBridge: [Function: getAutomaticTokenBridge],
+      supportsCircleBridge: [Function: supportsCircleBridge],
+      getCircleBridge: [Function: getCircleBridge],
+      supportsAutomaticCircleBridge: [Function: supportsAutomaticCircleBridge],
+      getAutomaticCircleBridge: [Function: getAutomaticCircleBridge],
+      supportsIbcBridge: [Function: supportsIbcBridge],
+      getIbcBridge: [Function: getIbcBridge],
+      supportsPorticoBridge: [Function: supportsPorticoBridge],
+      getPorticoBridge: [Function: getPorticoBridge],
+      supportsTBTCBridge: [Function: supportsTBTCBridge],
+      getTBTCBridge: [Function: getTBTCBridge]
+    },
+    _state: 4,
+    transfer: {
+      amount: 200000n,
+      from: { chain: 'Ethereum', address: [EvmAddress] },
+      to: { chain: 'Solana', address: [SolanaAddress] },
+      automatic: false,
+      payload: undefined,
+      nativeGas: undefined
+    },
+    txids: [
+      {
+        chain: 'Ethereum',
+        txid: '0xef4f880ab808690c56c27083e6bd85e63aad6c82a39a6079a8fcd1f0029b6ddb'
+      },
+      {
+        chain: 'Solana',
+        txid: 'HUJnm9MugrS1KHjUrNCtz3knNhzgiYTtxqYhvixBfocxgyuB1t6XrMmBjtWdREiu4QA848bEveiDqpzmr52Qwv6'
+      }
+    ],
+    attestations: [ { id: [Object], attestation: [Object] } ]
+  }
+  TransferTime: 20:11.501 (m:ss.mmm)
+}

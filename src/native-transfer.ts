@@ -23,11 +23,13 @@ import { SignerStuff, getSigner, getTokenDecimals } from './helpers/helpers';
 
     const token = Wormhole.tokenId(sendChain.chain, 'native');
 
-    const amt = '1';
+    const amt = '0.01';
 
     const automatic = false;
 
     const decimals = await getTokenDecimals(wh, token, sendChain);
+
+    console.log('Decimal values for token', decimals, token,);
 
     const xfer = await tokenTransfer(wh, {
         token,
@@ -49,6 +51,8 @@ import { SignerStuff, getSigner, getTokenDecimals } from './helpers/helpers';
         }
     ) {
         // Token Transfer Logic
+
+        console.log(`Token transfer initiated with ${route}`);
 
         const xfer = await wh.tokenTransfer(
             route.token,
@@ -77,7 +81,6 @@ import { SignerStuff, getSigner, getTokenDecimals } from './helpers/helpers';
         const destTxids = await xfer.completeTransfer(route.destination.signer);
         console.log(`Completed Transfer: `, destTxids);
     }
-
 
     process.exit(0);
 })();

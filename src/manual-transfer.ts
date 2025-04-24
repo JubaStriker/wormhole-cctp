@@ -1,4 +1,4 @@
-import { wormhole } from '@wormhole-foundation/sdk';
+import { TokenTransfer, wormhole } from '@wormhole-foundation/sdk';
 import evm from '@wormhole-foundation/sdk/evm';
 import solana from '@wormhole-foundation/sdk/solana';
 import { getSigner } from './helpers/helpers';
@@ -16,7 +16,7 @@ import { getSigner } from './helpers/helpers';
     const destination = await getSigner(rcvChain);
 
     // Define the transfer amount (in the smallest unit, so 0.1 USDC = 100,000 units assuming 6 decimals)
-    const amt = 1_00_000n;  // 1 USDC
+    const amt = 2_00_000n;  // 1 USDC
 
     const automatic = false;
 
@@ -28,17 +28,17 @@ import { getSigner } from './helpers/helpers';
         automatic
     );
 
+    console.time("TransferTime");
+
     console.log('Circle Transfer object created:', xfer);
 
     console.log('Transfer', xfer.transfer.from.address);
 
-    // Initiate the transfer on the source chain (Avalanche)
-    console.log('Starting Transfer');
     const srcTxids = await xfer.initiateTransfer(source.signer);
     console.log(`Started Transfer: `, srcTxids);
 
     // Wait for Circle Attestation (VAA)
-    const timeout = 60 * 1000; // Timeout in milliseconds (60 seconds)
+    const timeout = 50 * 60 * 1000; // Timeout in milliseconds (60 seconds)
     console.log('Waiting for Attestation');
     const attestIds = await xfer.fetchAttestation(timeout);
     console.log(`Got Attestation: `, attestIds);
@@ -49,6 +49,8 @@ import { getSigner } from './helpers/helpers';
     console.log(`Completed Transfer: `, dstTxids);
 
     console.log('Circle Transfer status: ', xfer);
+
+    console.timeEnd("TransferTime");
 
     process.exit(0);
 })();
