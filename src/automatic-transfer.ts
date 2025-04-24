@@ -5,7 +5,7 @@ import { getSigner } from './helpers/helpers';
 
 (async function () {
     // Initialize the Wormhole object for the Testnet environment and add supported chains (evm and solana)
-    const wh = await wormhole('Testnet', [evm, solana]);
+    const wh = await wormhole('Mainnet', [evm, solana]);
 
     // Set up source and destination chains
     const sendChain = wh.getChain('Ethereum');
@@ -27,13 +27,13 @@ import { getSigner } from './helpers/helpers';
         destination.address,
         automatic
     );
-
+    console.time("TransferTime");
     console.log('Circle Transfer object created:', xfer);
 
     // Initiate the transfer on the source chain (Avalanche)
     console.log('Starting Transfer');
     const srcTxids = await xfer.initiateTransfer(source.signer);
     console.log(`Started Transfer: `, srcTxids);
-
+    console.timeEnd("TransferTime");
     process.exit(0);
 })();

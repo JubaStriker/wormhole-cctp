@@ -294,3 +294,59 @@ Started Transfer:  [
   }
   TransferTime: 20:11.501 (m:ss.mmm)
 }
+
+
+#######################################################################################################################################
+
+Token transfer initiated with [object Object]
+{
+  sourceToken: {
+    token: { chain: 'Ethereum', address: 'native' },
+    amount: 1000000000000000n
+  },
+  destinationToken: { token: { chain: 'Sui', address: [SuiAddress] }, amount: 71522n },
+  relayFee: { token: { chain: 'Sui', address: [SuiAddress] }, amount: 28478n },
+  destinationNativeGas: 0n,
+  warnings: undefined,
+  eta: 1080005,
+  expires: 2025-04-24T10:59:48.592Z
+}
+Source Trasaction ID: 0xb8d862a7f2a42c9cbbcd5fc0c8a701129bebc629cb520fd4a28b4d0c3ea45650
+Wormhole Trasaction ID: 0xb8d862a7f2a42c9cbbcd5fc0c8a701129bebc629cb520fd4a28b4d0c3ea45650
+Getting Attestation
+Error in token transfer Error: Dry run failed, could not automatically determine a budget: MoveAbort(MoveLocation { module: ModuleId { address: 26efee2b51c911237888e5dc6702868abca3c7ac12c53f76ef8eba0697695e3d, name: Identifier("transfer") }, function: 2, instruction: 10, function_name: Some("deserialize") }, 0) in command 2
+    at setGasBudget (file:///D:/TransFi/wormwhole/node_modules/@mysten/sui/dist/esm/transactions/json-rpc-resolver.js:42:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async resolveTransactionData (file:///D:/TransFi/wormwhole/node_modules/@mysten/sui/dist/esm/transactions/json-rpc-resolver.js:16:5)
+    at async file:///D:/TransFi/wormwhole/node_modules/@mysten/sui/dist/esm/transactions/Transaction.js:435:7
+    at async _Transaction.runPlugins_fn (file:///D:/TransFi/wormwhole/node_modules/@mysten/sui/dist/esm/transactions/Transaction.js:451:3)
+    at async _Transaction.prepareBuild_fn (file:///D:/TransFi/wormwhole/node_modules/@mysten/sui/dist/esm/transactions/Transaction.js:422:3)
+    at async _Transaction.build (file:///D:/TransFi/wormwhole/node_modules/@mysten/sui/dist/esm/transactions/Transaction.js:371:5)
+    at async SuiClient.signAndExecuteTransaction (file:///D:/TransFi/wormwhole/node_modules/@mysten/sui/dist/esm/client/client.js:312:26)
+    at async SuiSigner.signAndSend (file:///D:/TransFi/wormwhole/node_modules/@wormhole-foundation/sdk-sui/dist/esm/signer.js:32:32)
+    at async ssw (file:///D:/TransFi/wormwhole/node_modules/@wormhole-foundation/sdk-connect/dist/esm/common.js:39:28) {
+  [cause]: {
+    effects: {
+      messageVersion: 'v1',
+      status: [Object],
+      executedEpoch: '742',
+      gasUsed: [Object],
+      modifiedAtVersions: [Array],
+      sharedObjects: [Array],
+      transactionDigest: 'HKujeg4TPWupMivWEpUNnJmichd7mgYCd3GxyWxLN6ph',
+      mutated: [Array],
+      gasObject: [Object],
+      dependencies: [Array]
+    },
+    events: [],
+    objectChanges: [ [Object], [Object] ],
+    balanceChanges: [ [Object] ],
+    input: {
+      messageVersion: 'v1',
+      transaction: [Object],
+      sender: '0x805b2c92b5401efe8787d61931574b5afc575e4a5d6cbc31c522bcbfa256b837',
+      gasData: [Object]
+    },
+    executionErrorSource: 'VMError with status ABORTED with sub status 0 at location Module ModuleId { address: 26efee2b51c911237888e5dc6702868abca3c7ac12c53f76ef8eba0697695e3d, name: Identifier("transfer") } and message 0x26efee2b51c911237888e5dc6702868abca3c7ac12c53f76ef8eba0697695e3d::transfer::deserialize at offset 10 at code offset 10 in function definition 2'
+  }
+}

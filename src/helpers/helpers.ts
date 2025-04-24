@@ -7,6 +7,8 @@ import {
     Chain,
     TokenId,
     isTokenId,
+    CircleTransfer,
+    TransactionId,
 } from '@wormhole-foundation/sdk';
 import evm from '@wormhole-foundation/sdk/evm';
 import solana from '@wormhole-foundation/sdk/solana';
@@ -88,3 +90,36 @@ export async function getTokenDecimals<
         ? Number(await wh.getDecimals(token.chain, token.address))
         : sendChain.config.nativeTokenDecimals;
 }
+
+export async function waitForRelay(
+    txid: TransactionId,
+    wh: Wormhole<any>,
+    destinationSigner: Signer,
+    pollIntervalMs = 10_000,
+    timeoutMs = 20 * 60 * 1000 // 20 minutes
+): Promise<'completed' | 'timeout'> {
+    const start = Date.now();
+
+    const xfer = await CircleTransfer.from(wh, txid);
+
+    while (Date.now() - start < timeoutMs) {
+        try {
+            const attestIds = await xfer.fetchAttestation(5_000);
+
+            if (attestIds && attestIds.length > 0) {
+                console.log('Attestation received, trying to complete...');
+
+                const result = await xfer.completeTransfer(destinationSigner);
+                console.log('Transfer completed:', result);
+                return 'completed';
+            }
+        } catch (err) {
+            console.log('Waiting for relay... still pending.');
+        }
+
+        await new Promise((resolve) => setTimeout(resolve, pollIntervalMs));
+    }
+
+    return 'timeout';
+}
+
